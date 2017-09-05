@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+<html lang="cn">
+{% extends 'base.html' %}
+{% block title %} IT运维部请客记录 {% endblock %}
+{% block headmessage %}
+    <h3 style="font-family: 'Microsoft Sans Serif';">各组请客清单</h3>
+{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <div class="panel panel-default">
+            <p style="font-family: 'Microsoft Sans Serif';font-size: 14pt;font-weight: bold;">
+                <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+            </p>
+            <div class="panel-body" style="background-color: transparent;">
+                <p>
+                     {{ post.body | truncatechars:40 }}
+                </p>
+            </div>
+            <div class="panel-footer" style="background-color:#bce8f1">
+                <p>
+                    发布时间：{{ post.pub_date | date:"Y M d,h:m:s" }}
+                </p>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

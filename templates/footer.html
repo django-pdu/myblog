@@ -1,0 +1,8 @@
+<!--footer.html-->
+{% block footer %}
+    {% if now %}
+        <p style="font-family: 'Microsoft Sans Serif';">现在时间:{{ now }}</p>
+    {% else %}
+        <p style="font-family: 'Microsoft Sans Serif';">本内容如有错误请告知boss</p>
+    {% endif %}
+{% endblock %}

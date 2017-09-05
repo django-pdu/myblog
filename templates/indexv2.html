@@ -1,0 +1,15 @@
+<!-- index.html -->
+
+<html lang="cn">
+{% extends 'base.html' %}
+{% block title %} IT运维部请客记录 {% endblock %}
+{% block headmessage %}
+    <h3 style="font-family: 'Microsoft Sans Serif';">请客列表</h3>
+{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <p style="font-family: 'Microsoft Sans Serif';font-size: 14pt;font-weight: bold;">
+            <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}

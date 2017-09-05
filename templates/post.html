@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- post.html -->
+{% extends 'base.html' %}
+{% load markdown_deux_tags %}
+{% block title %} {{ post.title }} -请客详情 {% endblock %}
+{% block headmessage %}
+    <h3 style="font-family:'Microsoft Sans Serif';">{{ post.title }}</h3>
+    <a style="font-family: 'Microsoft Sans Serif';" href="/">回首页</a>
+{% endblock %}
+{% block content %}
+    <p style="font-family: 'Microsoft Sans Serif';font-size: 12pt;letter-spacing: 2pt;">
+        <a>{{ post.body | markdown}}</a>
+    </p>
+{% endblock %}
